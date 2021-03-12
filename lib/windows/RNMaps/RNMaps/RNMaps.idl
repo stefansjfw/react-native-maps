@@ -1,0 +1,8 @@
+namespace RNMaps {
+    [default_interface]
+    runtimeclass RNMapsModule : Windows.UI.Xaml.Controls.Panel {
+        RNMapsModule(Microsoft.ReactNative.IReactContext context);
+        void UpdateProperties(Microsoft.ReactNative.IJSValueReader reader);
+        void DispatchCommand(String commandId, Microsoft.ReactNative.IJSValueReader commandArgsReader);
+    };
+}
