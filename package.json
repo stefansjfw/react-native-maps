@@ -1,5 +1,5 @@
 {
-  "name": "react-native-maps",
+  "name": "map",
   "description": "React Native Mapview component for iOS + Android",
   "main": "index.js",
   "author": "Leland Richardson <leland.m.richardson@gmail.com>",
@@ -29,12 +29,10 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "0.0.5",
     "eslint": "5.16.0",
-    "react-native": "0.62",
-    "react-native-windows": "^0.62.0-0"
+    "react-native": "0.63.2",
+    "react-native-windows": "^0.63.7"
   },
   "dependencies": {
-    "@types/geojson": "^7946.0.7",
-    "react": ">= 16.0 || < 17.0",
-    "react-native": ">=0.59.5"
+    "@types/geojson": "^7946.0.7"
   }
 }

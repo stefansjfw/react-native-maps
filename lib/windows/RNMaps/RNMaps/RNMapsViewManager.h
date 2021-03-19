@@ -19,6 +19,12 @@ namespace winrt::RNMaps::implementation {
         winrt::hstring Name() noexcept;
         winrt::Windows::UI::Xaml::FrameworkElement CreateView() noexcept;
 
+        // IViewManagerWithChildren
+        void AddView(winrt::Windows::UI::Xaml::FrameworkElement parent, winrt::Windows::UI::Xaml::UIElement child, int64_t index);
+        void RemoveAllChildren(winrt::Windows::UI::Xaml::FrameworkElement parent);
+        void RemoveChildAt(winrt::Windows::UI::Xaml::FrameworkElement parent, int64_t index);
+        void ReplaceChild(winrt::Windows::UI::Xaml::FrameworkElement parent, winrt::Windows::UI::Xaml::UIElement oldChild, winrt::Windows::UI::Xaml::UIElement newChild);
+
         // IViewManagerWithReactContext
         winrt::Microsoft::ReactNative::IReactContext ReactContext() noexcept;
         void ReactContext(winrt::Microsoft::ReactNative::IReactContext reactContext) noexcept;

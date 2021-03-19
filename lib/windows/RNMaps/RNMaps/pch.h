@@ -6,4 +6,5 @@
 #include <winrt/Windows.System.h>
 #include <winrt/Windows.UI.Xaml.h>
 #include <winrt/Windows.UI.Xaml.Controls.h>
+#include <winrt/Windows.UI.Xaml.Controls.Maps.h>
 #include <winrt/Microsoft.ReactNative.h>
