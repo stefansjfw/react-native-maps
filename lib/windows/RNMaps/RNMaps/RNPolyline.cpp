@@ -65,7 +65,7 @@ namespace winrt::RNMaps::implementation
                     {
                         const auto &lat = position.AsObject()["latitude"].AsDouble();
                         const auto &lon = position.AsObject()["longitude"].AsDouble();
-                        m_coordinates.push_back({lat, lon, 111});
+                        m_coordinates.push_back({lat, lon, 0});
                     }
                 }
             }

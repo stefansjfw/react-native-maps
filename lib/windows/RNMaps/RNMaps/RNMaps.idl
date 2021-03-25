@@ -14,4 +14,12 @@ namespace RNMaps {
         void DispatchCommand(String commandId, Microsoft.ReactNative.IJSValueReader commandArgsReader);
         void AddToMap(Windows.UI.Xaml.Controls.Maps.MapControl map);
     };
+
+    [default_interface]
+    runtimeclass RNMapIconModule : Windows.UI.Xaml.FrameworkElement{
+        RNMapIconModule(Microsoft.ReactNative.IReactContext context);
+        void UpdateProperties(Microsoft.ReactNative.IJSValueReader reader);
+        void DispatchCommand(String commandId, Microsoft.ReactNative.IJSValueReader commandArgsReader);
+        void AddToMap(Windows.UI.Xaml.Controls.Maps.MapControl map);
+    };
 }

@@ -9,3 +9,4 @@
 #include <winrt/Windows.UI.Xaml.Controls.Maps.h>
 #include <winrt/Microsoft.ReactNative.h>
 #include <winrt/Windows.Devices.Geolocation.h>
+#include <winrt/Windows.Storage.Streams.h>

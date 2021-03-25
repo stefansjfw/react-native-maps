@@ -17,6 +17,8 @@
     <ClCompile Include="RNMapsViewManager.cpp" />
     <ClCompile Include="RNPolyline.cpp" />
     <ClCompile Include="RNPolylineViewManager.cpp" />
+    <ClCompile Include="RNMapIcon.cpp" />
+    <ClCompile Include="RNMapIconViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -25,6 +27,8 @@
     <ClInclude Include="RNMapsViewManager.h" />
     <ClInclude Include="RNPolyline.h" />
     <ClInclude Include="RNPolylineViewManager.h" />
+    <ClInclude Include="RNMapIcon.h" />
+    <ClInclude Include="RNMapIconViewManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RNMaps.def" />

@@ -14,7 +14,7 @@ export { default as UrlTile } from './lib/components/MapUrlTile.js';
 export { default as WMSTile } from './lib/components/MapWMSTile.js';
 export { default as LocalTile } from './lib/components/MapLocalTile.js';
 export { default as Callout } from './lib/components/MapCallout.js';
-export { default as MapViewWindows } from './lib/components/MapViewWindows.js';
+export { default as MapViewWindows, RNPolylineViewWindows, RNMapIconViewWindows } from './lib/components/MapViewWindows.js';
 export {
   default as CalloutSubview,
 } from './lib/components/MapCalloutSubview.js';

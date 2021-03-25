@@ -6,6 +6,7 @@
 
 #include "RNMapsViewManager.h"
 #include "RNPolylineViewManager.h"
+#include "RNMapIconViewManager.h"
 
 using namespace winrt::Microsoft::ReactNative;
 
@@ -15,5 +16,6 @@ namespace winrt::RNMaps::implementation
   {
     packageBuilder.AddViewManager(L"RNMapsViewManager", []() { return winrt::make<RNMapsViewManager>(); });
     packageBuilder.AddViewManager(L"RNPolylineViewManager", []() { return winrt::make<RNPolylineViewManager>(); });
+    packageBuilder.AddViewManager(L"RNMapIconViewManager", []() { return winrt::make<RNMapIconViewManager>(); });
   }
 }

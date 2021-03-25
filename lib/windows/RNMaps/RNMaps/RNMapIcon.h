@@ -3,17 +3,15 @@
 #include "pch.h"
 #include "winrt/Microsoft.ReactNative.h"
 #include "NativeModules.h"
-#include "RNMapsModule.g.h"
-
-#include <map>
+#include "RNMapIconModule.g.h"
 
 namespace winrt::RNMaps::implementation
 {
 
-    class RNMapsModule : public RNMapsModuleT<RNMapsModule>
+    class RNMapIconModule : public RNMapIconModuleT<RNMapIconModule>
     {
     public:
-        RNMapsModule(Microsoft::ReactNative::IReactContext const &reactContext);
+        RNMapIconModule(Microsoft::ReactNative::IReactContext const &reactContext);
 
         static winrt::Windows::Foundation::Collections::
             IMapView<winrt::hstring, winrt::Microsoft::ReactNative::ViewManagerPropertyType>
@@ -30,21 +28,26 @@ namespace winrt::RNMaps::implementation
             winrt::hstring const &commandId,
             winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
 
-        void AddFeature(winrt::Windows::UI::Xaml::UIElement child, int64_t index);
+        void AddToMap(Windows::UI::Xaml::Controls::Maps::MapControl const &map);
 
     private:
+        void UpdateMapIcon();
         Microsoft::ReactNative::IReactContext m_reactContext{nullptr};
-        Windows::UI::Xaml::Controls::Maps::MapControl m_mapControl;
-        std::map<int64_t, winrt::Windows::UI::Xaml::UIElement &> m_features;
 
-        Windows::UI::Xaml::Controls::TextBlock mTextBlock;
-        hstring mText;
+        std::string m_title;
+        std::string m_description;
+        std::string m_imagePath;
+        Windows::Devices::Geolocation::BasicGeoposition m_coordinate;
+        std::optional<Point> m_anchor;
+        std::string m_identifier;
+        bool m_draggable{ false };
+        Windows::UI::Xaml::Controls::Maps::MapIcon m_mapIcon{};
     };
 }
 
 namespace winrt::RNMaps::factory_implementation
 {
-    struct RNMapsModule : RNMapsModuleT<RNMapsModule, implementation::RNMapsModule>
+    struct RNMapIconModule : RNMapIconModuleT<RNMapIconModule, implementation::RNMapIconModule>
     {
     };
 }
