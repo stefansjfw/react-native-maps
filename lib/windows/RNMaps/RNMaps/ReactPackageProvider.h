@@ -13,4 +13,3 @@ namespace winrt::RNMaps::implementation {
 namespace winrt::RNMaps::factory_implementation {
   struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
 }
-

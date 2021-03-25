@@ -4,5 +4,14 @@ namespace RNMaps {
         RNMapsModule(Microsoft.ReactNative.IReactContext context);
         void UpdateProperties(Microsoft.ReactNative.IJSValueReader reader);
         void DispatchCommand(String commandId, Microsoft.ReactNative.IJSValueReader commandArgsReader);
+        void AddFeature(Windows.UI.Xaml.UIElement child, Int64 index);
+    };
+
+    [default_interface]
+    runtimeclass RNPolylineModule : Windows.UI.Xaml.FrameworkElement{
+        RNPolylineModule(Microsoft.ReactNative.IReactContext context);
+        void UpdateProperties(Microsoft.ReactNative.IJSValueReader reader);
+        void DispatchCommand(String commandId, Microsoft.ReactNative.IJSValueReader commandArgsReader);
+        void AddToMap(Windows.UI.Xaml.Controls.Maps.MapControl map);
     };
 }

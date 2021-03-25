@@ -8,6 +8,7 @@ namespace winrt::RNMaps::implementation {
     class RNMapsViewManager : public winrt::implements<
         RNMapsViewManager,
         winrt::Microsoft::ReactNative::IViewManager,
+        winrt::Microsoft::ReactNative::IViewManagerWithChildren,
         winrt::Microsoft::ReactNative::IViewManagerWithReactContext,
         winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
         winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,

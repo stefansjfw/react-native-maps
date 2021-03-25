@@ -121,16 +121,24 @@
     <ClInclude Include="RNMaps.h">
       <DependentUpon>RNMaps.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="RNPolyline.h">
+      <DependentUpon>RNMaps.idl</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="RNPolylineViewManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="RNMapsViewManager.cpp" />
+    <ClCompile Include="RNPolylineViewManager.cpp" />
     <ClCompile Include="ReactPackageProvider.cpp">
       <DependentUpon>ReactPackageProvider.idl</DependentUpon>
     </ClCompile>
     <ClCompile Include="RNMaps.cpp">
+      <DependentUpon>RNMaps.idl</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="RNPolyline.cpp">
       <DependentUpon>RNMaps.idl</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />

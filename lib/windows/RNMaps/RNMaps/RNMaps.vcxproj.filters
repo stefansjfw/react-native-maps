@@ -15,12 +15,16 @@
     <ClCompile Include="ReactPackageProvider.cpp" />
     <ClCompile Include="RNMaps.cpp" />
     <ClCompile Include="RNMapsViewManager.cpp" />
+    <ClCompile Include="RNPolyline.cpp" />
+    <ClCompile Include="RNPolylineViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReactPackageProvider.h" />
     <ClInclude Include="RNMaps.h" />
     <ClInclude Include="RNMapsViewManager.h" />
+    <ClInclude Include="RNPolyline.h" />
+    <ClInclude Include="RNPolylineViewManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RNMaps.def" />

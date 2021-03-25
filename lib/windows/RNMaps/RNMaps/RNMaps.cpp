@@ -12,6 +12,7 @@ namespace winrt
     using namespace Windows::UI::Popups;
     using namespace Windows::UI::Xaml;
     using namespace Windows::UI::Xaml::Controls;
+    using namespace Windows::UI::Xaml::Controls::Maps;
     using namespace Windows::UI::Xaml::Input;
     using namespace Windows::UI::Xaml::Media;
 } // namespace winrt
@@ -65,5 +66,12 @@ namespace winrt::RNMaps::implementation
     void RNMapsModule::DispatchCommand(winrt::hstring const &commandId, winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept
     {
         // TODO: handle commands here
+    }
+
+    void RNMapsModule::AddFeature(winrt::Windows::UI::Xaml::UIElement child, int64_t index) {
+        m_features.insert({ index, child });
+        if (auto childModule = child.try_as<winrt::RNMaps::RNPolylineModule>()) {
+            childModule.AddToMap(m_mapControl);
+        }
     }
 }

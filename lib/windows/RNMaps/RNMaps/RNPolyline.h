@@ -3,17 +3,15 @@
 #include "pch.h"
 #include "winrt/Microsoft.ReactNative.h"
 #include "NativeModules.h"
-#include "RNMapsModule.g.h"
-
-#include <map>
+#include "RNPolylineModule.g.h"
 
 namespace winrt::RNMaps::implementation
 {
 
-    class RNMapsModule : public RNMapsModuleT<RNMapsModule>
+    class RNPolylineModule : public RNPolylineModuleT<RNPolylineModule>
     {
     public:
-        RNMapsModule(Microsoft::ReactNative::IReactContext const &reactContext);
+        RNPolylineModule(Microsoft::ReactNative::IReactContext const &reactContext);
 
         static winrt::Windows::Foundation::Collections::
             IMapView<winrt::hstring, winrt::Microsoft::ReactNative::ViewManagerPropertyType>
@@ -30,20 +28,25 @@ namespace winrt::RNMaps::implementation
             winrt::hstring const &commandId,
             winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
 
-        void AddFeature(winrt::Windows::UI::Xaml::UIElement child, int64_t index);
+        void AddToMap(Windows::UI::Xaml::Controls::Maps::MapControl const &map);
+
     private:
+        void UpdatePolyline();
         Microsoft::ReactNative::IReactContext m_reactContext{nullptr};
-        Windows::UI::Xaml::Controls::Maps::MapControl m_mapControl;
-        std::map<int64_t, winrt::Windows::UI::Xaml::UIElement&> m_features;
-        
-        Windows::UI::Xaml::Controls::TextBlock mTextBlock;
-        hstring mText;
+
+        std::vector<Windows::Devices::Geolocation::BasicGeoposition> m_coordinates;
+        bool m_tappable{false};
+        double m_strokeWidth{1};
+        Windows::UI::Color m_strokeColor{Windows::UI::Colors::Black()};
+        int m_zIndex{0};
+        bool m_strokeDashed{false};
+        Windows::UI::Xaml::Controls::Maps::MapPolyline m_polyline{};
     };
 }
 
 namespace winrt::RNMaps::factory_implementation
 {
-    struct RNMapsModule : RNMapsModuleT<RNMapsModule, implementation::RNMapsModule>
+    struct RNPolylineModule : RNPolylineModuleT<RNPolylineModule, implementation::RNPolylineModule>
     {
     };
 }

@@ -32,9 +32,7 @@ namespace winrt::RNMaps::implementation
     {
         if (auto module = parent.try_as<winrt::RNMaps::RNMapsModule>())
         {
-            module.UpdateProperties(nullptr);
-            module.UpdateProperties(nullptr);
-            module.UpdateProperties(nullptr);
+            module.AddFeature(child, index);
         }
     }
 

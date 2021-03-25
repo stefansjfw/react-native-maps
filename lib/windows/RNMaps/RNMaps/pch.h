@@ -8,3 +8,4 @@
 #include <winrt/Windows.UI.Xaml.Controls.h>
 #include <winrt/Windows.UI.Xaml.Controls.Maps.h>
 #include <winrt/Microsoft.ReactNative.h>
+#include <winrt/Windows.Devices.Geolocation.h>
